@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TaskMangerWPF" 
         xmlns:databinding1="clr-namespace:TaskMangerWPF.Convertors"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+        Title="Not task manager" Height="670" Width="600">
 
 
     <Window.Resources>
@@ -21,8 +21,8 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <ListBox ItemsSource="{Binding Processes,UpdateSourceTrigger=PropertyChanged}" 
-                 SelectedItem="{Binding SelectedProcess, UpdateSourceTrigger=PropertyChanged}" Margin="0,40,0,10">
+        <ListBox  ItemsSource="{Binding Processes,UpdateSourceTrigger=PropertyChanged}" 
+                 SelectedItem="{Binding SelectedProcess, UpdateSourceTrigger=PropertyChanged}" Margin="5,40,-110,10">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <GroupBox>
@@ -36,12 +36,15 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <TextBlock Margin="227,10,10,410" Text="{Binding Path=CpuUsage, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
-        <TextBlock Margin="36,10,159,512" Text="{Binding Path=RamUsage, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+        <TextBlock Margin="10,0,10,600" Text="Total memory usage"></TextBlock>
+        <TextBlock Margin="45,15,160,600" Text="{Binding Path=RamUsage, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+        <TextBlock Margin="200,0,-10,600" Text="Total CPU usage"></TextBlock>
+        <TextBlock Margin="225,15,10,600" Text="{Binding Path=CpuUsage, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+        
         <Grid Grid.Column="1">
-            <Button Margin="280,510,10,10" Command="{Binding KillCommand}">Kill</Button>
-            <Button Margin="130,450,130,70" Command="{Binding SortByNameCommand}">Sort by name</Button>
-            <Button Margin="280,450,10,70" Command="{Binding SortByRamCommand}">Sort by RAM</Button>
+            <Button Margin="130,40,50,510" Command="{Binding KillCommand}">Kill</Button>
+            <Button Margin="130,130,50,440" Command="{Binding SortByNameCommand}">Sort by name</Button>
+            <Button Margin="130,200,50,370" Command="{Binding SortByRamCommand}">Sort by RAM</Button>
         </Grid>
     </Grid>
 </Window>

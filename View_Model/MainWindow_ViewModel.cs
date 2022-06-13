@@ -205,6 +205,7 @@ namespace TaskMangerWPF.View_Model
             {
             }
             OnPropertyChanged("Processes");
+
             if(NameSortEvent != null)
             {
                 _nameAcendingSort = !_nameAcendingSort;
